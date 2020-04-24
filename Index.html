@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rating</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	<style>
+		body
+		{
+		  padding: 30px;
+		  background-color: #fcfcfc;  
+		  text-align: center;
+		}
+		.center-div
+		{
+		  margin: 0 auto;
+		  max-width: 800px;
+		  height: auto;
+		  /*background-color: #ccc;*/
+		  border-radius: 20px;
+		}
+		.rating {
+                float:left; 
+                position: relative;
+                left: 40%
+            }
+
+            /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+               follow these rules. Every browser that supports :checked also supports :not(), so
+               it doesn’t make the test unnecessarily selective */
+            .rating:not(:checked) > input {
+                position:absolute;
+                top:-9999px;
+                clip:rect(0,0,0,0);
+            }
+
+            .rating:not(:checked) > label {
+                float:right;
+                width:1em;
+                padding:0 .1em;
+                overflow:hidden;
+                white-space:nowrap;
+                cursor:pointer;
+                font-size:200%;
+                line-height:1.2;
+                color:#ddd;
+                text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+            }
+
+            .rating:not(:checked) > label:before {
+                content: '★ ';
+            }
+
+            .rating > input:checked ~ label {
+                color: #f70;
+                text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+            }
+
+            .rating:not(:checked) > label:hover,
+            .rating:not(:checked) > label:hover ~ label {
+                color: gold;
+                text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+            }
+
+            .rating > input:checked + label:hover,
+            .rating > input:checked + label:hover ~ label,
+            .rating > input:checked ~ label:hover,
+            .rating > input:checked ~ label:hover ~ label,
+            .rating > label:hover ~ input:checked ~ label {
+                color: #ea0;
+                text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+            }
+
+            .rating > label:active {
+                position:relative;
+                top:2px;
+                left:2px;
+            }
+
+            @media screen and (max-width: 700px) {
+            	h1 {
+            		font-size:5vw;
+            	}
+            	h2 {
+            		font-size:3vw;
+            	}
+            	.rating {
+                	left: 25%;
+            	}
+            	
+            }
+
+	</style>
+</head>
+<body>
+	<div class="center-div">
+	<form id="myForm" onsubmit="handleFormSubmit(this)">
+	<img src="https://raw.githubusercontent.com/Koksheng/my_website/master/dist/img/I%20Love%20Cuci-Final-path-01.jpg" style="width:200px;height:200px;margin-top: 30px; border-radius: 20px; " >
+	<h1>Enjoying our cleaner's Services?</h1>
+    <h2>Tap a star to rate her/him !</h2>
+    <br>
+    <div class="form-row">
+    <div class="form-group col-md-6" style="margin:auto;">
+        <label for="customer_name">Customer Name</label>
+        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+    </div>
+    </div>
+    <br>
+    
+    <div class="form-row">
+    <div class="form-group col-md-6" style="margin:auto;">
+        <label for="last_name">Cleaner Name (if remember)</label>
+        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Wati">
+    </div>
+	</div>
+	<br><br>
+	<div class="rating">
+	    <h4 >Please rate:</h4>
+	    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+	    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+	    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+	    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+	    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+	</div>
+	<br><br><br><br><br>
+
+	<button type="submit" class="btn btn-primary btn-block" style="width: 40%; margin: 0 auto;"  onclick="myFunction()">Submit</button>
+	<script>
+	function myFunction() {
+	  alert("Thank you for your feedback");
+	}
+	</script>
+	</form>
+    <div id="output"></div>
+    </div>
+
+</body>
+</html>
