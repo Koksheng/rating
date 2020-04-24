@@ -1,6 +1,9 @@
 function doGet(request) {
   return HtmlService.createTemplateFromFile('Index')
-      .evaluate();
+      .evaluate()
+      .setTitle('Responive Form')
+      .setSandboxMode(HtmlService.SandboxMode.IFRAME)
+      .addMetaTag('viewport', 'width=device-width, initial-scale=1');
 }
 
 /* @Include JavaScript and CSS Files */
@@ -19,3 +22,4 @@ function processForm(formObject) {
                 formObject.cleaner_name,
                 formObject.rating]);
 }
+

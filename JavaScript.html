@@ -12,6 +12,14 @@
       
       
   function handleFormSubmit(formObject) {
+  var x = document.forms["myForm"]["customer_name"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  else {
+  alert("Thank you for your feedback");
+  }
     google.script.run.processForm(formObject);
     document.getElementById("myForm").reset();
   }

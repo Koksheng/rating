@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Rating</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	
-	<style>
-		body
-		{
-		  padding: 30px;
-		  background-color: #fcfcfc;  
-		  text-align: center;
-		}
-		.center-div
-		{
-		  margin: 0 auto;
-		  max-width: 800px;
-		  height: auto;
-		  /*background-color: #ccc;*/
-		  border-radius: 20px;
-		}
-		.rating {
+    
+    <title>Rating</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="google-site-verification" content="..."/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <?!= include('JavaScript'); ?>
+    
+    <style>
+        body
+        {
+          padding: 30px;
+          background-color: #fcfcfc;  
+          text-align: center;
+        }
+        .center-div
+        {
+          margin: 0 auto;
+          max-width: 800px;
+          height: auto;
+          /*background-color: #ccc;*/
+          border-radius: 20px;
+        }
+        .rating {
                 float:left; 
                 position: relative;
                 left: 40%
@@ -79,59 +84,56 @@
             }
 
             @media screen and (max-width: 700px) {
-            	h1 {
-            		font-size:5vw;
-            	}
-            	h2 {
-            		font-size:3vw;
-            	}
-            	.rating {
-                	left: 25%;
-            	}
-            	
+                body {
+                    padding: 0 30px;
+                }
+                h1 {
+                    font-size:5vw;
+                }
+                h2 {
+                    font-size:3vw;
+                }
+                .rating {
+                    left: 25%;
+                }
             }
-
-	</style>
+            
+    </style>
 </head>
 <body>
-	<div class="center-div">
-	<form id="myForm" onsubmit="handleFormSubmit(this)">
-	<img src="https://raw.githubusercontent.com/Koksheng/my_website/master/dist/img/I%20Love%20Cuci-Final-path-01.jpg" style="width:200px;height:200px;margin-top: 30px; border-radius: 20px; " >
-	<h1>Enjoying our cleaner's Services?</h1>
+    <div class="center-div">
+    <form id="myForm" onsubmit="handleFormSubmit(this)">
+    <img src="https://raw.githubusercontent.com/Koksheng/my_website/master/dist/img/I%20Love%20Cuci-Final-path-01.jpg" style="width:200px;height:200px;margin-top: 0; border-radius: 20px; " >
+    <h1>Enjoying our cleaner's Services?</h1>
     <h2>Tap a star to rate her/him !</h2>
     <br>
     <div class="form-row">
     <div class="form-group col-md-6" style="margin:auto;">
         <label for="customer_name">Customer Name</label>
-        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+        <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Name when place booking">
     </div>
     </div>
     <br>
     
     <div class="form-row">
     <div class="form-group col-md-6" style="margin:auto;">
-        <label for="last_name">Cleaner Name (if remember)</label>
-        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Wati">
+        <label for="cleaner_name">Cleaner Name (if remember)</label>
+        <input type="text" class="form-control" id="cleaner_name" name="cleaner_name" placeholder="Example: Wati">
     </div>
-	</div>
-	<br><br>
-	<div class="rating">
-	    <h4 >Please rate:</h4>
-	    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
-	    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
-	    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
-	    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
-	    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
-	</div>
-	<br><br><br><br><br>
+    </div>
+    <br>
+    <div class="rating">
+        <h4 >Please rate:</h4>
+        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+    </div>
+    <br><br><br><br><br>
 
-	<button type="submit" class="btn btn-primary btn-block" style="width: 40%; margin: 0 auto;"  onclick="myFunction()">Submit</button>
-	<script>
-	function myFunction() {
-	  alert("Thank you for your feedback");
-	}
-	</script>
-	</form>
+    <button type="submit" class="btn btn-primary btn-block" style="width: 40%; margin: 0 auto;">Submit</button>
+    </form>
     <div id="output"></div>
     </div>
 
